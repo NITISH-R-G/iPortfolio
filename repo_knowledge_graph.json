@@ -1,0 +1,10 @@
+{
+  "nodes": [
+    {
+      "id": "root/README.md",
+      "label": "README.md",
+      "type": "file"
+    }
+  ],
+  "edges": []
+}

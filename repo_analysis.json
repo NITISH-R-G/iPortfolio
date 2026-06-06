@@ -1,0 +1,14 @@
+{
+  "frameworks": [],
+  "languages": [],
+  "services": [],
+  "databases": [],
+  "deployment": [],
+  "env_vars": [],
+  "structure": {
+    "root": [
+      "README.md"
+    ]
+  },
+  "external_integrations": []
+}

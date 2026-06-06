@@ -1,0 +1,43 @@
+name: AI Documentation Agent
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  release:
+    types: [published]
+
+jobs:
+  ai_agent_review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          if [ -f .github/scripts/requirements.txt ]; then
+            pip install -r .github/scripts/requirements.txt
+          fi
+
+      - name: Run AI Documentation Agent
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Provide actual key if available
+        run: python .github/scripts/ai_agent.py
+
+      - name: Commit and Push AI Generated Documentation
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs(ai): auto-update documentation based on recent changes"
+          file_pattern: 'ai_summary.md README.md'

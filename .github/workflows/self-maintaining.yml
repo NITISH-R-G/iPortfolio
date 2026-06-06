@@ -1,0 +1,67 @@
+name: Self-Maintaining Repository
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron: '0 0 * * 0' # Weekly
+
+jobs:
+  analyze_and_document:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          if [ -f .github/scripts/requirements.txt ]; then
+            pip install -r .github/scripts/requirements.txt
+          fi
+
+      - name: Run Tests
+        run: |
+          pip install pytest
+          # Run tests if test directory exists, otherwise just version check
+          if [ -d "tests" ]; then pytest tests/; else pytest --version; fi
+
+      - name: Run Linting
+        run: |
+          pip install flake8
+          flake8 .github/scripts/ --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Run Security Scans
+        run: |
+          pip install bandit
+          bandit -r .github/scripts/ -lll
+
+      - name: Analyze Repository
+        run: python .github/scripts/analyze_repo.py
+
+      - name: Generate Interactive Architecture Diagrams
+        run: python .github/scripts/generate_diagrams.py
+
+      - name: Update README
+        run: python .github/scripts/update_readme.py
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: update self-maintaining repository components"
+          file_pattern: 'README.md repo_analysis.json repo_knowledge_graph.json diagrams.md ai_summary.md'
