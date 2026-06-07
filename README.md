@@ -17,7 +17,12 @@ No specific environment variables detected.
 
 ```
 root/
+  ├── repo_analysis.json
+  ├── .gitignore
+  ├── ai_summary.md
   ├── README.md
+  ├── diagrams.md
+  ├── repo_knowledge_graph.json
 ```
 
 <!-- END_ARCHITECTURE -->
@@ -33,7 +38,7 @@ graph TD;
 ## AI Repository Maintainer Summary
 
 <!-- START_AI_SUMMARY -->
-No recent changes detected.
+No AI summary available (OPENAI_API_KEY not set).
 <!-- END_AI_SUMMARY -->
 
 ## Setup & Execution
