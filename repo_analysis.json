@@ -7,12 +7,12 @@
   "env_vars": [],
   "structure": {
     "root": [
-      "repo_analysis.json",
-      ".gitignore",
-      "ai_summary.md",
       "README.md",
+      "repo_analysis.json",
+      "repo_knowledge_graph.json",
+      ".gitignore",
       "diagrams.md",
-      "repo_knowledge_graph.json"
+      "ai_summary.md"
     ]
   },
   "external_integrations": []
