@@ -1,13 +1,13 @@
 {
   "nodes": [
     {
-      "id": "root/repo_knowledge_graph.json",
-      "label": "repo_knowledge_graph.json",
+      "id": "root/diagrams.md",
+      "label": "diagrams.md",
       "type": "file"
     },
     {
-      "id": "root/.gitignore",
-      "label": ".gitignore",
+      "id": "root/repo_knowledge_graph.json",
+      "label": "repo_knowledge_graph.json",
       "type": "file"
     },
     {
@@ -26,8 +26,8 @@
       "type": "file"
     },
     {
-      "id": "root/diagrams.md",
-      "label": "diagrams.md",
+      "id": "root/.gitignore",
+      "label": ".gitignore",
       "type": "file"
     }
   ],
