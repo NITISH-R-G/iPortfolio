@@ -1,13 +1,18 @@
 {
   "nodes": [
     {
-      "id": "root/.gitignore",
-      "label": ".gitignore",
+      "id": "root/repo_analysis.json",
+      "label": "repo_analysis.json",
       "type": "file"
     },
     {
-      "id": "root/repo_analysis.json",
-      "label": "repo_analysis.json",
+      "id": "root/ai_summary.md",
+      "label": "ai_summary.md",
+      "type": "file"
+    },
+    {
+      "id": "root/.gitignore",
+      "label": ".gitignore",
       "type": "file"
     },
     {
@@ -16,18 +21,13 @@
       "type": "file"
     },
     {
-      "id": "root/repo_knowledge_graph.json",
-      "label": "repo_knowledge_graph.json",
-      "type": "file"
-    },
-    {
       "id": "root/diagrams.md",
       "label": "diagrams.md",
       "type": "file"
     },
     {
-      "id": "root/ai_summary.md",
-      "label": "ai_summary.md",
+      "id": "root/repo_knowledge_graph.json",
+      "label": "repo_knowledge_graph.json",
       "type": "file"
     }
   ],
