@@ -17,12 +17,12 @@ No specific environment variables detected.
 
 ```
 root/
-  ├── repo_analysis.json
-  ├── ai_summary.md
-  ├── .gitignore
-  ├── README.md
   ├── diagrams.md
   ├── repo_knowledge_graph.json
+  ├── repo_analysis.json
+  ├── .gitignore
+  ├── ai_summary.md
+  ├── README.md
 ```
 
 <!-- END_ARCHITECTURE -->
