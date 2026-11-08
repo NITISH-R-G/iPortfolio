@@ -18,11 +18,11 @@ No specific environment variables detected.
 ```
 root/
   ├── ai_summary.md
-  ├── .gitignore
   ├── diagrams.md
-  ├── repo_analysis.json
   ├── README.md
   ├── repo_knowledge_graph.json
+  ├── repo_analysis.json
+  ├── .gitignore
 ```
 
 <!-- END_ARCHITECTURE -->
